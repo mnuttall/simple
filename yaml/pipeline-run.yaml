@@ -9,7 +9,7 @@ spec:
     type: manual
   serviceAccount: 'default'
   resources:
-  - name: build-simple-image
+  - name: build-simple
     inputs:
     - name: workspace
       resourceRef:
