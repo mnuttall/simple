@@ -1,7 +1,7 @@
 apiVersion: pipeline.knative.dev/v1alpha1
 kind: PipelineRun
 metadata:
-  name: simple-pipeline-run-1
+  name: simple-pipeline-run-2
 spec:
   pipelineRef:
     name: simple-pipeline
