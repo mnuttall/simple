@@ -1,0 +1,14 @@
+apiVersion: pipeline.knative.dev/v1alpha1
+kind: Pipeline
+metadata:
+  name: simple-pipeline
+spec:
+  tasks:
+  - name: build-simple
+    taskRef:
+      name: build-push
+    params:
+    - name: pathToDockerFile
+      value: Dockerfile
+    - name: pathToContext
+      value: /workspace
