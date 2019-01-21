@@ -16,16 +16,10 @@ docker run -v $PWD:/workspace -v $PWD/config.json:/kaniko/config.json --env DOCK
 One can then 
 
 ```
-docker run localhost:5000/mnuttall/simple test
+docker run -p 8081:8081 localhost:5000/mnuttall/simple
 ```
 
-which amazingly enough says, 
-
-> Hi today we are /simple.sh and say test
-
-Obviously it's easier to use `docker build` but we're trying to wean ourselves off that in this example. 
-
-Note that the password in 'config.json' is just to keep kaniko happy; it's not a real password. 
+and then point a browser to localhost:8081. Obviously it's easier to use `docker build` but we're trying to wean ourselves off that in this example. Note that the password in 'config.json' is just to keep kaniko happy; it's not a real password. 
 
 ## Deleting images from the registry
 
