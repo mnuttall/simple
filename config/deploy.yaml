@@ -28,5 +28,6 @@ spec:
       containers:
       - name: myapp
         image: localhost:5000/mnuttall/simple
+        imagePullPolicy: Always
         ports:
         - containerPort: 8081
