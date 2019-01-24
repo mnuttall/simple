@@ -3,12 +3,19 @@ kind: Pipeline
 metadata:
   name: simple-pipeline
 spec:
+  resources: 
+  - name: source-repo
+    type: git
+  - name: image-name
+    type: image
   tasks:
   - name: build-simple
     taskRef:
       name: build-push
-    params:
-    - name: pathToDockerFile
-      value: Dockerfile
-    - name: pathToContext
-      value: /workspace
+    resources:
+      inputs:
+      - name: docker-source
+        resource: source-repo
+      outputs:
+      - name: builtImage
+        resource: image-name

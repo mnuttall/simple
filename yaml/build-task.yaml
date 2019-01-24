@@ -5,19 +5,19 @@ metadata:
 spec:
   inputs:
     resources:
-    - name: workspace
-      type: git
+      - name: docker-source
+        type: git
     params:
     - name: pathToDockerFile
       description: The path to the dockerfile to build
-      default: /workspace/Dockerfile
+      default: /workspace/docker-source/Dockerfile
     - name: pathToContext
       description: The build context used by Kaniko (https://github.com/GoogleContainerTools/kaniko#kaniko-build-contexts)
-      default: /workspace
+      default: /workspace/docker-source
   outputs:
     resources:
-    - name: builtImage
-      type: image
+      - name: builtImage
+        type: image
   steps:
   - name: build-and-push
     image: gcr.io/kaniko-project/executor
@@ -27,3 +27,4 @@ spec:
     - --dockerfile=${inputs.params.pathToDockerFile}
     - --destination=${outputs.resources.builtImage.url}
     - --context=${inputs.params.pathToContext}
+    - --insecure
