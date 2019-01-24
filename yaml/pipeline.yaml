@@ -19,3 +19,10 @@ spec:
       outputs:
       - name: builtImage
         resource: image-name
+  - name: deploy-simple
+    taskRef: 
+      name: deploy-simple-kubectl-task
+    resources: 
+      inputs:
+      - name: git-source
+        resource: source-repo

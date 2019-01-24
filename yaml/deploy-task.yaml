@@ -5,7 +5,7 @@ metadata:
 spec:
   inputs: 
     resources: 
-    - name: workspace
+    - name: git-source
       type: git
   steps:
   - name: run-kubectl
@@ -14,4 +14,4 @@ spec:
     args: 
     - 'apply'
     - '-f'
-    - '/workspace/config'
+    - '/workspace/git-source/config'
