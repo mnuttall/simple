@@ -20,4 +20,4 @@ spec:
   type: image
   params:
   - name: url
-    value: 9.140.99.106:5000/mnuttall/simple-from-pipeline
+    value: host.docker.internal:5000/mnuttall/simple-from-pipeline
