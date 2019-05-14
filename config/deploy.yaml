@@ -9,6 +9,7 @@ spec:
   ports:
   - port: 8081
     targetPort: 8081
+    nodePort: 31000
 
 ---
 
@@ -16,6 +17,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: myapp
+  labels:
+    version: two
 spec:
   selector:
     matchLabels:
@@ -27,7 +30,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: mnuttall/simple
+        image: PIPELINE_REPLACE:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8081
