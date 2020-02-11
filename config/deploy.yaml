@@ -16,6 +16,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: myapp
+  labels:
+    version: one
 spec:
   selector:
     matchLabels:
@@ -27,7 +29,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: mnuttall/simple
+        image: mnuttall/simple:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8081

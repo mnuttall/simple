@@ -16,7 +16,7 @@ func (h helloHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	lock.Lock()
 	defer lock.Unlock()
 	invocations++
-	fmt.Fprintf(w, "Hello, you are caller %d to URL %s", invocations, r.URL.Path)
+	fmt.Fprintf(w, "Testing this for a PR. Hello, you are caller %d to URL %s", invocations, r.URL.Path)
 	fmt.Printf("Request %d handled\n", invocations)
 }
 
